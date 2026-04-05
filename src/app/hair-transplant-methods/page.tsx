@@ -160,18 +160,26 @@ export default function MethodsPage() {
                 points: ['You have advanced (Norwood 5–7) hair loss', 'You want fastest recovery', 'Large graft sessions needed', 'Sensitive scalp'],
                 color: 'purple',
               },
-            ].map((col) => (
-              <div key={col.title} className={`bg-${col.color}-50 rounded-xl p-5 border border-${col.color}-100`}>
-                <h3 className={`font-bold text-${col.color}-700 mb-3`}>{col.title}</h3>
-                <ul className="space-y-2">
-                  {col.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-gray-700 text-sm">
-                      <span className={`text-${col.color}-600 font-bold`}>&#10003;</span> {p}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            ].map((col) => {
+              const colorClasses: Record<string, { bg: string; border: string; heading: string; check: string }> = {
+                blue: { bg: 'bg-blue-50', border: 'border-blue-100', heading: 'text-blue-700', check: 'text-blue-600' },
+                green: { bg: 'bg-green-50', border: 'border-green-100', heading: 'text-green-700', check: 'text-green-600' },
+                purple: { bg: 'bg-purple-50', border: 'border-purple-100', heading: 'text-purple-700', check: 'text-purple-600' },
+              };
+              const cc = colorClasses[col.color];
+              return (
+                <div key={col.title} className={`${cc.bg} rounded-xl p-5 border ${cc.border}`}>
+                  <h3 className={`font-bold ${cc.heading} mb-3`}>{col.title}</h3>
+                  <ul className="space-y-2">
+                    {col.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-gray-700 text-sm">
+                        <span className={`${cc.check} font-bold`}>&#10003;</span> {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </section>
 
