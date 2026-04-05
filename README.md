@@ -1,10 +1,10 @@
 # Hair Clinic Turkey
 
-**Hair Transplant Turkey by Hair Clinic Turkey** — Premium hair restoration website built with Next.js 14, TypeScript, and TailwindCSS.
+**Hair Transplant Turkey by Hair Clinic Turkey** — Premium hair restoration website built with Next.js 15, TypeScript, and TailwindCSS.
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Styling:** TailwindCSS
 - **Font:** System font stack (`font-sans`)
